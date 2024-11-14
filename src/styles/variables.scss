@@ -1,0 +1,57 @@
+// colors
+$bg-color: #fff;
+$primary-color: #1f2041;
+$purple-color: #bc9cff;
+$green-color: #6fcf97;
+// gradients
+$primary-gradient: linear-gradient(
+	180deg,
+	rgb(187, 155, 255) 0%,
+	rgb(139, 163, 249) 100%
+);
+
+$secondary-gradient: linear-gradient(
+	180deg,
+	rgb(111, 207, 151) 0%,
+	rgb(102, 210, 233) 100%
+);
+// mixin for colors
+@mixin color-opacity($color, $opacity) {
+	color: rgba($color, $opacity);
+}
+//break-points
+$breakpoint-laptop-l: 1440px;
+$breakpoint-laptop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile-l: 425px;
+$breakpoint-mobile-m: 375px;
+$breakpoint-mobile-s: 320px;
+
+// mixin for adaptive
+@mixin respond-to($breakpoint) {
+	@if $breakpoint == laptop-l {
+		@media (max-width: $breakpoint-laptop-l) {
+			@content;
+		}
+	} @else if $breakpoint == laptop {
+		@media (max-width: $breakpoint-laptop) {
+			@content;
+		}
+	} @else if $breakpoint == tablet {
+		@media (max-width: $breakpoint-tablet) {
+			@content;
+		}
+	} @else if $breakpoint == mobile-l {
+		@media (max-width: $breakpoint-mobile-l) {
+			@content;
+		}
+	} @else if $breakpoint == mobile-m {
+		@media (max-width: $breakpoint-mobile-m) {
+			@content;
+		}
+	} @else if $breakpoint == mobile-s {
+		@media (max-width: $breakpoint-mobile-s) {
+			@content;
+		}
+	}
+}
