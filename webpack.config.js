@@ -40,6 +40,13 @@ module.exports = (env, argv) => {
 					test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
 					type: 'asset/resource',
 				},
+				{
+					test: /\.(woff|woff2|eot|ttf|otf)$/,
+					type: 'asset/resource',
+					generator: {
+						filename: 'assets/fonts/[name][ext]', // Путь к шрифтам в dist
+					},
+				},
 			],
 		},
 		plugins: [
