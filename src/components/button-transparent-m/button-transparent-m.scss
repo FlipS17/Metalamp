@@ -1,0 +1,23 @@
+@use '../../styles/variables' as *;
+
+.button-transparent {
+	padding: 9px 20px;
+	background-color: white;
+	border: none;
+	color: $purple-color;
+	border-radius: 22px;
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.button-transparent::after {
+	position: absolute;
+	content: '';
+	height: 110%;
+	width: 105%;
+	border-radius: 22px;
+	background-image: $primary-gradient;
+	z-index: -1;
+}

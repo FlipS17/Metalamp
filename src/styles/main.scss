@@ -1,17 +1,4 @@
-@use '@/components/button/button';
-@use '@/components/header/header';
+@use './variables' as *;
 @use './fonts.scss' as *;
-@use './variables.scss' as *;
-
-* {
-	font-family: $primary-font;
-}
-
-body {
-	max-width: 1160px;
-	width: 100%;
-}
-
-a {
-	text-decoration: none;
-}
+@use './base.scss' as *;
+@use '@/components/button-transparent-m/button-transparent-m';
