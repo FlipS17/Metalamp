@@ -1,6 +1,17 @@
 @use '@/components/button/button';
+@use '@/components/header/header';
+@use './fonts.scss' as *;
 @use './variables.scss' as *;
 
 * {
 	font-family: $primary-font;
+}
+
+body {
+	max-width: 1160px;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
 }

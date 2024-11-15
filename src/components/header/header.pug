@@ -1,4 +1,29 @@
 header.header
-div.header__container
-img(src=require("../../assets/icons/logo.svg") alt="choco")
-h1 Hello, world!
+  div.header__container
+    img(src=require("../../assets/icons/logo.svg") alt="choco")
+
+    ul.header__nav
+      li
+        a(href="/about") О нас
+
+      li.dropdown
+        select#services(name="services" onchange="location = this.value;")
+          option(value="") Услуги
+          option(value="/services/service1") Услуга 1
+          option(value="/services/service2") Услуга 2
+          option(value="/services/service3") Услуга 3
+      li
+        a(href="/careers") Вакансии
+      li
+        a(href="/news") Новости
+
+      li.dropdown
+        select#agreements(name="agreements" onchange="location = this.value;")
+          option(value="") Соглашения
+          option(value="/agreements/terms") Условия использования
+          option(value="/agreements/privacy") Политика конфиденциальности
+
+
+      include ../button/button.pug
+
+           

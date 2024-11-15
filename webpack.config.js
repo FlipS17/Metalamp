@@ -15,6 +15,7 @@ module.exports = (env, argv) => {
 		output: {
 			filename: isDev ? 'bundle.js' : 'bundle.[contenthash].js', // Без хэша в dev для удобства
 			path: path.resolve(__dirname, 'dist'),
+			assetModuleFilename: 'assets/[hash][ext][query]', // Путь для ассетов (по умолчанию)
 		},
 		resolve: {
 			alias: {
@@ -37,14 +38,17 @@ module.exports = (env, argv) => {
 					],
 				},
 				{
-					test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
-					type: 'asset/resource',
-				},
-				{
-					test: /\.(woff|woff2|eot|ttf|otf)$/,
+					test: /\.(png|jpe?g|gif|svg)$/i,
 					type: 'asset/resource',
 					generator: {
-						filename: 'assets/fonts/[name][ext]', // Путь к шрифтам в dist
+						filename: 'assets/images/[name][ext]', // Путь для изображений
+					},
+				},
+				{
+					test: /\.(woff|woff2|eot|ttf|otf)$/i, // Обрабатываем шрифты
+					type: 'asset/resource',
+					generator: {
+						filename: 'assets/fonts/[name][ext]', // Путь для шрифтов
 					},
 				},
 			],
